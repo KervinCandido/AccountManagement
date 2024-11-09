@@ -1,0 +1,1 @@
+module kervincandido.accountmanagement.domain {}

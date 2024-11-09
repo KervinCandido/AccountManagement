@@ -1,0 +1,2 @@
+module kervincandido.accountmanagement.repository {
+}

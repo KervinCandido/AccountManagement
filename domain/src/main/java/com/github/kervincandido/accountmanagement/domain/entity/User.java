@@ -14,22 +14,25 @@ public class User {
 
     private final UUID userUuid;
     private final String userName;
-    private final String password;
+    private String password;
     private final Email email;
     private LocalDateTime inclusionDate;
     private LocalDateTime exclusionDate;
     private LocalDateTime lastUpdateDate;
 
-    public User(UUID userUuid, String userName, String password, Email email) {
+    public User(UUID userUuid, String userName, String password, Email email, LocalDateTime inclusionDate) {
         Objects.requireNonNull(userName, "the user name cannot be null");
-        Objects.requireNonNull(password, "the password cannot be null");
         Objects.requireNonNull(email, "the email cannot be null");
         if (!USERNAME_PATTERN.matcher(userName).matches())
             throw new InvalidUserNameException(userName);
         this.userUuid = userUuid;
         this.userName = userName;
-        this.password = password;
+        this.setPassword(password);
         this.email = email;
+    }
+
+    public User(String userName, String password, Email email) {
+        this(null, userName, password, email, null);
     }
 
     public UUID getUserUuid() {
@@ -42,6 +45,11 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        Objects.requireNonNull(password, "the password cannot be null");
+        this.password = password;
     }
 
     public Email getEmail() {

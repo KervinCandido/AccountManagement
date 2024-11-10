@@ -21,6 +21,8 @@
 | lastUpdateDate | Last Update date |  LocalDateTime   |
 
 ## Use case
+### Register
+
 
 ## Repository
 

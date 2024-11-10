@@ -11,10 +11,10 @@ class UserTest {
 
     @Test
     void nullFieldThrowException() {
-        assertThrows(NullPointerException.class, () -> new User(null, null, null, null));
-        assertThrows(NullPointerException.class, () -> new User(null, "test", null, null));
-        assertThrows(NullPointerException.class, () -> new User(null, "test", "secret", null));
-        var user = new User(null, "test", "secret", new Email(null, "email@email"));
+        assertThrows(NullPointerException.class, () -> new User(null, null, null));
+        assertThrows(NullPointerException.class, () -> new User("test", null, null));
+        assertThrows(NullPointerException.class, () -> new User("test", "secret", null));
+        var user = new User("test", "secret", new Email(null, "email@email"));
         assertNotNull(user.getUserName());
         assertEquals("test", user.getUserName());
         assertNotNull(user.getPassword());
@@ -25,7 +25,7 @@ class UserTest {
 
     @Test
     void validUser() {
-        var user = new User(null, "test", "secret", new Email(null, "email@email"));
+        var user = new User("test", "secret", new Email(null, "email@email"));
         assertNotNull(user.getUserName());
         assertEquals("test", user.getUserName());
         assertNotNull(user.getPassword());
@@ -38,14 +38,14 @@ class UserTest {
     @ValueSource(strings = {"", "Vi", "1van", "theSuperUserWithALargeName"})
     void invalidUserName(String userName) {
         var email = new Email(null, "user@mail.com");
-        assertThrows(InvalidUserNameException.class, () -> new User(null, userName, "secret", email));
+        assertThrows(InvalidUserNameException.class, () -> new User(userName, "secret", email));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"john", "marie", "littleBoy199"})
     void validUserName(String userName) {
         var email = new Email(null, "user@mail.com");
-        var user = new User(null, userName, "secret", email);
+        var user = new User(userName, "secret", email);
         assertNotNull(user);
         assertNotNull(user.getUserName());
         assertEquals(userName, user.getUserName());

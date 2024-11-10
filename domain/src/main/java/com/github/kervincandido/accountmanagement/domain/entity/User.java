@@ -49,6 +49,7 @@ public class User {
 
     public void setPassword(String password) {
         Objects.requireNonNull(password, "the password cannot be null");
+        if (password.trim().isBlank()) throw new IllegalArgumentException("the password cannot be empty");
         this.password = password;
     }
 

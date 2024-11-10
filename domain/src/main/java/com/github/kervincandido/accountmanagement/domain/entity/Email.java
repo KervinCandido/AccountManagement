@@ -22,6 +22,10 @@ public record Email(Long emailId, String emailAddress) {
         this.emailAddress = emailAddress.trim();
     }
 
+    public Email(String emailAddress) {
+        this(null, emailAddress);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

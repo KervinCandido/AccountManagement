@@ -2,8 +2,8 @@ package com.github.kervincandido.accountmanagement.usecase.rule.register;
 
 import com.github.kervincandido.accountmanagement.domain.entity.Email;
 import com.github.kervincandido.accountmanagement.domain.entity.User;
-import com.github.kervincandido.accountmanagement.repository.user.UserRepository;
 import com.github.kervincandido.accountmanagement.usecase.exception.BusinessException;
+import com.github.kervincandido.accountmanagement.usecase.repository.UserRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

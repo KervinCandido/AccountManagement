@@ -2,7 +2,7 @@ package com.github.kervincandido.accountmanagement.usecase.register;
 
 import com.github.kervincandido.accountmanagement.domain.entity.Email;
 import com.github.kervincandido.accountmanagement.domain.entity.User;
-import com.github.kervincandido.accountmanagement.repository.user.UserRepository;
+import com.github.kervincandido.accountmanagement.usecase.repository.UserRepository;
 import com.github.kervincandido.accountmanagement.usecase.security.PasswordManager;
 import com.github.kervincandido.accountmanagement.usecase.validation.Validation;
 import org.junit.jupiter.api.AfterEach;

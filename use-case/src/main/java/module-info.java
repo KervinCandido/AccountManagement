@@ -1,6 +1,5 @@
 module kervincandido.accountmanagement.usecase {
     requires transitive kervincandido.accountmanagement.domain;
-    requires transitive kervincandido.accountmanagement.repository;
 
     exports com.github.kervincandido.accountmanagement.usecase.exception;
     exports com.github.kervincandido.accountmanagement.usecase.rule.register;
